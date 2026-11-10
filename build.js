@@ -17,7 +17,7 @@ fs.writeFileSync(path.join(out, 'index.html'), `<!doctype html>
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-title" content="Gym Progress">
+<meta name="apple-mobile-web-app-title" content="Lift Log">
 <meta name="apple-mobile-web-app-status-bar-style" content="default">
 <meta name="theme-color" content="#F2F4F3" media="(prefers-color-scheme: light)">
 <meta name="theme-color" content="#0E1513" media="(prefers-color-scheme: dark)">
@@ -36,7 +36,7 @@ ${body.trim()}
 `);
 
 fs.writeFileSync(path.join(out, 'manifest.webmanifest'), JSON.stringify({
-  name: 'Gym Progress', short_name: 'Gym', start_url: './', scope: './', display: 'standalone',
+  name: 'Lift Log', short_name: 'Lift Log', start_url: './', scope: './', display: 'standalone',
   background_color: '#F2F4F3', theme_color: '#13201B',
   icons: [{ src: 'icon-192.png', sizes: '192x192', type: 'image/png' }, { src: 'icon-512.png', sizes: '512x512', type: 'image/png', purpose: 'any maskable' }]
 }, null, 2));

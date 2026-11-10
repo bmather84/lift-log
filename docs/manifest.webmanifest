@@ -1,6 +1,6 @@
 {
-  "name": "Gym Progress",
-  "short_name": "Gym",
+  "name": "Lift Log",
+  "short_name": "Lift Log",
   "start_url": "./",
   "scope": "./",
   "display": "standalone",

@@ -1,4 +1,4 @@
-<title>Gym Progress</title>
+<title>Lift Log</title>
 <meta name="claude:viewport-fit-sides" content="cover">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600&family=Barlow+Condensed:wght@600;700&display=swap">
 <style>
@@ -600,7 +600,7 @@ const ACT = {
   },
   restore() {
     let j = null; try { j = JSON.parse(($('#backup-in') || {}).value || ''); } catch (e) {}
-    if (!j || !Array.isArray(j.sessions) || !j.sessions.every(s => s && s.id && s.d && Array.isArray(s.items))) { ui.err = 'That does not look like a Gym Progress backup. Paste the whole backup text and try again.'; ui.confirm = null; return 'keeperr'; }
+    if (!j || !Array.isArray(j.sessions) || !j.sessions.every(s => s && s.id && s.d && Array.isArray(s.items))) { ui.err = 'That does not look like a Lift Log backup. Paste the whole backup text and try again.'; ui.confirm = null; return 'keeperr'; }
     if (ui.confirm !== 'restore') { ui.confirm = 'restore'; ui.keepIn = ($('#backup-in') || {}).value; return true; }
     const oldMonths = S.sessions.map(mkey), keep = new Set(j.sessions.map(s => s.id));
     const gone = S.sessions.filter(s => !keep.has(s.id)).map(s => s.id);

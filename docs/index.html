@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-title" content="Gym Progress">
+<meta name="apple-mobile-web-app-title" content="Lift Log">
 <meta name="apple-mobile-web-app-status-bar-style" content="default">
 <meta name="theme-color" content="#F2F4F3" media="(prefers-color-scheme: light)">
 <meta name="theme-color" content="#0E1513" media="(prefers-color-scheme: dark)">
@@ -14,7 +14,7 @@
 <link rel="icon" type="image/png" href="icon-192.png">
 <style>:root{padding:env(safe-area-inset-top,0px) 0 env(safe-area-inset-bottom,0px)}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
 <script>window.GP_STANDALONE = true;</script>
-<title>Gym Progress</title>
+<title>Lift Log</title>
 <meta name="claude:viewport-fit-sides" content="cover">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600&family=Barlow+Condensed:wght@600;700&display=swap">
 <style>
@@ -617,7 +617,7 @@ const ACT = {
   },
   restore() {
     let j = null; try { j = JSON.parse(($('#backup-in') || {}).value || ''); } catch (e) {}
-    if (!j || !Array.isArray(j.sessions) || !j.sessions.every(s => s && s.id && s.d && Array.isArray(s.items))) { ui.err = 'That does not look like a Gym Progress backup. Paste the whole backup text and try again.'; ui.confirm = null; return 'keeperr'; }
+    if (!j || !Array.isArray(j.sessions) || !j.sessions.every(s => s && s.id && s.d && Array.isArray(s.items))) { ui.err = 'That does not look like a Lift Log backup. Paste the whole backup text and try again.'; ui.confirm = null; return 'keeperr'; }
     if (ui.confirm !== 'restore') { ui.confirm = 'restore'; ui.keepIn = ($('#backup-in') || {}).value; return true; }
     const oldMonths = S.sessions.map(mkey), keep = new Set(j.sessions.map(s => s.id));
     const gone = S.sessions.filter(s => !keep.has(s.id)).map(s => s.id);
